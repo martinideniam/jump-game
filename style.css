@@ -14,12 +14,38 @@ html {
 h1 {
   font-size: 4rem;
   color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
-.button {
+.button,
+.button-light {
   border: 2px solid white;
   padding: 1rem 2rem;
   cursor: pointer;
+}
+
+.buttons {
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.button-light-text,
+.button-text {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 main {
@@ -69,12 +95,6 @@ main {
   left: 480px;
 }
 
-.start-button {
-  border: white solid 2px;
-  padding: 1rem 2rem;
-  cursor: pointer;
-}
-
 .flexstuff {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -99,6 +119,10 @@ main {
 .animate {
   -webkit-animation: jump 0.5s linear;
           animation: jump 0.5s linear;
+}
+
+.rotate {
+  display: none;
 }
 
 @-webkit-keyframes block {
@@ -150,6 +174,18 @@ main {
   }
   100% {
     top: 150px;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .game,
+  .info,
+  .button,
+  .button-light {
+    display: none;
+  }
+  .rotate {
+    display: block;
   }
 }
 /*# sourceMappingURL=style.css.map */

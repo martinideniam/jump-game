@@ -13,12 +13,26 @@ html {
 h1 {
   font-size: 4rem;
   color: white;
+  user-select: none;
 }
 
-.button {
+.button,
+.button-light {
   border: 2px solid white;
   padding: 1rem 2rem;
   cursor: pointer;
+}
+
+.buttons {
+  width: 500px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.button-light-text,
+.button-text {
+  user-select: none;
 }
 
 main {
@@ -59,12 +73,6 @@ main {
   left: 480px;
 }
 
-.start-button {
-  border: white solid 2px;
-  padding: 1rem 2rem;
-  cursor: pointer;
-}
-
 .flexstuff {
   display: flex;
   justify-content: center;
@@ -81,6 +89,10 @@ main {
 
 .animate {
   animation: jump 0.5s linear;
+}
+
+.rotate {
+  display: none;
 }
 
 @keyframes block {
@@ -106,5 +118,17 @@ main {
   }
   100% {
     top: 150px;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .game,
+  .info,
+  .button,
+  .button-light {
+    display: none;
+  }
+  .rotate {
+    display: block;
   }
 }
